@@ -23,6 +23,42 @@ namespace WpfExample
         public MainWindow()
         {
             InitializeComponent();
+
+
+            /*
+            Grid grid = new Grid();
+            this.Content = grid;
+            Button btn = new Button();
+            btn.FontSize = 32;
+            btn.Width = 300;
+            btn.Height = 100;
+            WrapPanel wrapPanel = new WrapPanel();
+
+            TextBlock txtBlock = new TextBlock();
+            txtBlock.Text = "Multi";
+            txtBlock.Foreground = Brushes.Blue;
+            wrapPanel.Children.Add(txtBlock);
+
+            txtBlock = new TextBlock();
+            txtBlock.Text = "Color";
+            txtBlock.Foreground = Brushes.Red;
+            wrapPanel.Children.Add(txtBlock);
+
+            txtBlock = new TextBlock();
+            txtBlock.Text = "Button";
+            txtBlock.Foreground = Brushes.Yellow;
+            wrapPanel.Children.Add(txtBlock);
+
+            btn.Content = wrapPanel;
+
+            grid.Children.Add(btn);
+            */
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Danke fürs Klicken");
+        }
+
     }
 }
