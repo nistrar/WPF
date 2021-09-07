@@ -20,6 +20,14 @@ namespace WpfExample
     /// </summary>
     public partial class MainWindow : Window
     {
+        public int MyProperty {
+            get { return (int)GetValue(myDependencyProperty); }
+            set { SetValue(myDependencyProperty, value); } 
+        }
+
+        public static readonly DependencyProperty myDependencyProperty = 
+            DependencyProperty.Register("MyProperty", typeof(int), typeof(MainWindow), new PropertyMetadata(0));
+
         public MainWindow()
         {
             InitializeComponent();
@@ -53,6 +61,8 @@ namespace WpfExample
 
             grid.Children.Add(btn);
             */
+
+            
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
