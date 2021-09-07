@@ -57,8 +57,28 @@ namespace WpfExample
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Danke fürs Klicken");
+            MessageBox.Show("Button clicked - Direct event");
         }
 
+        private void Button_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Button mouse up - Bubbling Event out of the tree");
+        }
+
+        private void Button_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Preview mouse up - Tunneling Event into the tree");
+        }
+
+        private void Button_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Preview MouseLeftButtonDown - Tunneling Event into the tree");
+
+        }
+
+        private void Button_PreviewMouseRightButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Preview MouseRightButtonUp - Tunneling Event into the tree");
+        }
     }
 }

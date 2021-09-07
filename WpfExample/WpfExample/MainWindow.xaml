@@ -7,16 +7,7 @@
         mc:Ignorable="d"
         Title="WPF" Height="300" Width="550">
     <!-- Extensible Application Markup Language -->
-    <StackPanel>
-        <TextBlock HorizontalAlignment="Center" Margin="20">HelloWorld</TextBlock>
-
-        <ListBox Height="100" Width="100">
-            <ListBoxItem Content="Element1"/>
-            <ListBoxItem Content="Element2"/>
-            <ListBoxItem Content="Element3"/>
-        </ListBox>
-
-        <Button Content="Click me!" Click="Button_Click" Height="20" Width="100" Margin="20"/>
-
-    </StackPanel>
+    <Grid>
+        <Button Height="20" Width="100" Content="Click me!" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown" PreviewMouseRightButtonUp="Button_PreviewMouseRightButtonUp" MouseUp="Button_MouseUp" Click="Button_Click"/>
+    </Grid>
 </Window>
