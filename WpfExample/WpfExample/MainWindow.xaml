@@ -7,18 +7,10 @@
         mc:Ignorable="d"
         Title="WPF" Height="300" Width="550">
     <!-- Extensible Application Markup Language -->
-    <Grid>
-        <Button Height="100" Width="200" Content="Click Me!" Background="PaleVioletRed">
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="FontSize" Value="30"></Setter>
-                            <Setter Property="Background" Value="Blue"></Setter>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-    </Grid>
+    <StackPanel>
+        <!--Text Box ist das Ziel -->
+        <TextBox Name="MyTextBox" Width="100" Margin="50" Text="{Binding ElementName=MySlider, Path=Background, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+        <!--Slider ist die Quelle -->
+        <Slider Name="MySlider" Minimum="0" Maximum="100" IsSnapToTickEnabled="True"></Slider>
+    </StackPanel>
 </Window>
