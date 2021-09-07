@@ -8,6 +8,24 @@
         Title="WPF" Height="300" Width="550">
     <!-- Extensible Application Markup Language -->
     <Grid>
-        <Button Height="20" Width="100" Content="Click me!" PreviewMouseLeftButtonDown="Button_PreviewMouseLeftButtonDown" PreviewMouseRightButtonUp="Button_PreviewMouseRightButtonUp" MouseUp="Button_MouseUp" Click="Button_Click"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Button Grid.Column="0" Grid.Row="0">0</Button>
+        <Button Grid.Column="1" Grid.Row="0">1</Button>
+        <Button Grid.Column="2" Grid.Row="0">2</Button>
+        <Button Grid.Column="0" Grid.Row="1">3</Button>
+        <Button Grid.Column="1" Grid.Row="1">4</Button>
+        <Button Grid.Column="2" Grid.Row="1">5</Button>
+        <Button Grid.Column="0" Grid.Row="2">6</Button>
+        <Button Grid.Column="1" Grid.Row="2">7</Button>
+        <TextBlock Text="Test" Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="54"></TextBlock>
     </Grid>
 </Window>
