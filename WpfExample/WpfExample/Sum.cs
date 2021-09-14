@@ -22,8 +22,8 @@ namespace WpfExample
                 int number;
                 bool res = int.TryParse(value, out number);
                 if (res) num1 = value;
-                onPropertyChanged("Num1");
-                onPropertyChanged("Result");
+                OnPropertyChanged("Num1");
+                OnPropertyChanged("Result");
             }
         }
 
@@ -35,8 +35,8 @@ namespace WpfExample
                 int number;
                 bool res = int.TryParse(value, out number);
                 if (res) num2 = value;
-                onPropertyChanged("Num2");
-                onPropertyChanged("Result");
+                OnPropertyChanged("Num2");
+                OnPropertyChanged("Result");
             }
         }
 
@@ -51,13 +51,13 @@ namespace WpfExample
             {
                 int res = int.Parse(Num1) + int.Parse(Num2);
                 result = res.ToString();
-                onPropertyChanged("Result");
+                OnPropertyChanged("Result");
             }
 
         }
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void onPropertyChanged(string property)
+        private void OnPropertyChanged(string property)
         {
             if (PropertyChanged != null)
               PropertyChanged(this, new PropertyChangedEventArgs(property));
