@@ -8,69 +8,10 @@
         Title="WPF" Height="300" Width="550">
     <!-- Extensible Application Markup Language -->
     <StackPanel Margin="10">
-        <Grid>
-            <TextBlock FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center">Hallo Schöne Welt
-                <TextBlock.Style>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="Foreground" Value="Green"></Setter>
-                        <Style.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="Red"></Setter>
-                                <Setter Property="TextDecorations" Value="Underline"></Setter>
-                            </Trigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBlock.Style>
-            </TextBlock>
-        </Grid>
-        <Grid>
-            <TextBlock Text="Hallo Freund" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <TextBlock.Style>
-                    <Style TargetType="TextBlock">
-                        <Style.Triggers>
-                            <EventTrigger RoutedEvent="MouseEnter">
-                                <EventTrigger.Actions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Duration="0:0:0.500" Storyboard.TargetProperty="FontSize" To="72">
-                                                
-                                            </DoubleAnimation> 
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger.Actions>
-                            </EventTrigger>
-                            <EventTrigger RoutedEvent="MouseLeave">
-                                <EventTrigger.Actions>
-                                    <BeginStoryboard>
-                                        <Storyboard>
-                                            <DoubleAnimation Duration="0:0:0.300" Storyboard.TargetProperty="FontSize" To="32">
-                                                
-                                            </DoubleAnimation>
-                                        </Storyboard>
-                                    </BeginStoryboard>
-                                </EventTrigger.Actions>
-                            </EventTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBlock.Style>
-            </TextBlock>
-        </Grid>
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <CheckBox Name="cbHallo" Content="Ist jemand zuhause"></CheckBox>
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32">
-                <TextBlock.Style>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="Text" Value="Nein"/>
-                        <Setter Property="Foreground" Value="Red"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding ElementName=cbHallo, Path=IsChecked}" Value="true">
-                                <Setter Property="Text" Value="Na klar"></Setter>
-                                <Setter Property="Foreground" Value="Green"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBlock.Style>
-            </TextBlock>
-        </StackPanel>
+        <Label Margin="10">Benutzername</Label>
+        <TextBox Name="username" Margin="10"></TextBox>
+        <Label Margin="10">Passwort</Label>
+        <PasswordBox MaxLength="16" PasswordChar="*" Margin="10"></PasswordBox>
+        <Button Margin="10" Height="30" Width="80" Click="Button_Click">Einloggen</Button>
     </StackPanel>
 </Window>

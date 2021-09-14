@@ -31,5 +31,10 @@ namespace WpfExample
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if ((username.Text != null)&&( username.Text != ""))
+                MessageBox.Show("Willkomen " + username.Text);
+        }
     }
 }
