@@ -8,15 +8,16 @@
         Title="WPF" Height="300" Width="550">
     <!-- Extensible Application Markup Language -->
     <StackPanel>
-        <ComboBox Name="comboBoxColors">
-            <ComboBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal">
-                        <Rectangle Fill="{Binding Name}" Width="32" Height="32" Margin="5"/>
-                        <TextBlock Text="{Binding Name}" FontSize="32"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ComboBox.ItemTemplate>
-        </ComboBox>
+        <Label FontWeight="Bold">Pizza Belag</Label>
+        <CheckBox Name="cbAllToppings" IsThreeState="true" Checked="cbAllToppings_Checked" Unchecked="cbAllToppings_Unchecked">Alle Hinzufügen</CheckBox>
+        <StackPanel Margin="10">
+            <CheckBox Name="cbSalami" Checked="cbSingleCheckChanged" Unchecked="cbSingleCheckChanged">
+                <TextBlock>
+                    Salami <Run Foreground="Red" FontWeight="Bold">Scharf</Run>
+                </TextBlock>
+            </CheckBox>
+            <CheckBox Name="cbMushrooms" Checked="cbSingleCheckChanged" Unchecked="cbSingleCheckChanged">Mushrooms</CheckBox>
+            <CheckBox Name="cbMozzarella" Checked="cbSingleCheckChanged" Unchecked="cbSingleCheckChanged">Mozzarella</CheckBox>
+        </StackPanel>   
     </StackPanel>
 </Window>
